@@ -1,0 +1,21 @@
+- name: Verify
+  hosts: all
+  gather_facts: false
+  vars:
+    vector_config_path: /etc/vector/vector.yaml
+  tasks:
+    - name: Get Vector version
+      ansible.builtin.command: "vector -V"
+      changed_when: false
+      register: vector_version
+    - name: Assert Vector instalation
+      ansible.builtin.assert:
+        that: "'{{ vector_version.rc }}' == '0'"
+
+    - name: Get Vector validation
+      ansible.builtin.command: "vector validate"
+      changed_when: false
+      register: vector_check
+    - name: Assert Vector validation
+      ansible.builtin.assert:
+        that: "'{{ vector_check.rc }}' == '0'"

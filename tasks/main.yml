@@ -1,0 +1,73 @@
+---
+# tasks file for roles/vector
+# - name: Display facts
+#   debug:
+#     var: ansible_facts
+#   when: ansible_pkg_mgr == "yum"
+
+- name: SYSTEM | Update DNF repo for CentOS 8
+  ansible.builtin.include_tasks: dnf_prepare.yml
+  when: ansible_pkg_mgr == "dnf"
+
+- name: SYSTEM | Prepare systems
+  ansible.builtin.include_tasks: pre_task.yml
+
+- name: VECTOR | Get distrib
+  become: true
+  block:
+    - name: VECTOR | Get distrib on Debian Family
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb"
+        dest: "/tmp/vector_{{ vector_version }}-1_amd64.deb"
+        mode: "0644"
+      when: ansible_os_family == "Debian"
+    - name: VECTOR | Get distrib on RedHat Family (YUM)
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.{{ ansible_facts.architecture }}.rpm"
+        dest: "/tmp/vector-{{ vector_version }}-1.{{ ansible_facts.architecture }}.rpm"
+        mode: "0644"
+      when: ansible_os_family == "RedHat" and ansible_pkg_mgr == "yum"
+    - name: VECTOR | Get distrib on RedHat Family (DNF)
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-1.{{ ansible_facts.architecture }}.rpm"
+        dest: "/tmp/vector-{{ vector_version }}-1.{{ ansible_facts.architecture }}.rpm"
+        mode: "0644"
+      when: ansible_os_family == "RedHat" and ansible_pkg_mgr == "dnf"
+
+- name: VECTOR | Install packages
+  become: true
+  block:
+    - name: VECTOR | Install on Debian Family
+      ansible.builtin.apt:
+        deb: "/tmp/vector_{{ vector_version }}-1_amd64.deb"
+      when: ansible_os_family == "Debian"
+    - name: VECTOR | Install on RedHat Family (YUM)
+      ansible.builtin.yum:
+        name: "/tmp/vector-{{ vector_version }}-1.{{ ansible_facts.architecture }}.rpm"
+        state: present
+      when: ansible_os_family == "RedHat" and ansible_pkg_mgr == "yum"
+    - name: VECTOR | Install on RedHat Family (DNF)
+      ansible.builtin.dnf:
+        name: "/tmp/vector-{{ vector_version }}-1.{{ ansible_facts.architecture }}.rpm"
+        state: present
+        disable_gpg_check: true
+      when: ansible_os_family == "RedHat" and ansible_pkg_mgr == "dnf"
+
+- name: VECTOR | Configurate
+  block:
+    - name: VECTOR | Deploy config
+      become: true
+      ansible.builtin.template:
+        src: vector.j2
+        dest: /etc/vector/vector.yaml
+        mode: "0644"
+
+    - name: VECTOR | Create systemd service
+      become: true
+      ansible.builtin.template:
+        src: vector.service.j2
+        dest: /lib/systemd/system/vector.service
+        mode: "0644"
+
+- name: VECTOR | Restarted service
+  ansible.builtin.include_tasks: service.yml

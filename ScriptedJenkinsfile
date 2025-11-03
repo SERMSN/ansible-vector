@@ -1,0 +1,20 @@
+node("agent"){
+    stage("Git clone"){
+        git url:'https://github.com/SERMSN/ansible-vector.git'
+    }
+    stage("Set var prod_run"){
+        if(env.IS_PROD){
+            prod_run=true
+        } else {
+            prod_run=false
+        }
+    }
+    stage("Run ansible playbook"){
+        if (prod_run){
+            sh 'ansible-playbook tests/test.yml -i tests/inventory'
+        }
+        else{
+            sh 'ansible-playbook tests/test.yml -i tests/inventory --check --diff'
+        }
+    }
+}

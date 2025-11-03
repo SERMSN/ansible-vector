@@ -1,0 +1,27 @@
+- name: Find CentOS repo files
+  ansible.builtin.find:
+    paths: /etc/yum.repos.d/
+    patterns: 'CentOS-*'
+  register: centos_repo_files
+
+- name: Comment out mirrorlist
+  ansible.builtin.replace:
+    path: "{{ item.path }}"
+    regexp: '^(mirrorlist.*)'
+    replace: '#\1'
+  loop: "{{ centos_repo_files.files }}"
+  when: centos_repo_files.matched > 0
+
+- name: Update baseurl
+  ansible.builtin.replace:
+    path: "{{ item.path }}"
+    regexp: '^#baseurl=http://mirror.centos.org(.*)'
+    replace: 'baseurl=http://vault.centos.org\1'
+  loop: "{{ centos_repo_files.files }}"
+  when: centos_repo_files.matched > 0
+
+- name: Disable GPG check
+  ansible.builtin.replace:
+    path: "/etc/dnf/dnf.conf"
+    regexp: '^gpgcheck=1'
+    replace: 'gpgcheck=0'

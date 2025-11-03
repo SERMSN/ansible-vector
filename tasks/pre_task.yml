@@ -1,0 +1,29 @@
+- name: SYSTEM | Prepare
+  become: true
+  block:
+    - name: Prepare on RedHat Family (YUM)
+      ansible.builtin.yum:
+        name: sudo
+        update_cache: true
+      when: ansible_pkg_mgr == "yum"
+
+    - name: Prepare on RedHat Family (DNF)
+      ansible.builtin.dnf:
+        name: sudo
+        update_cache: true
+      when: ansible_pkg_mgr == "dnf"
+
+    - name: Allow release info change
+      ansible.builtin.lineinfile:
+        path: /etc/apt/apt.conf.d/99releaseinfochange
+        state: present
+        create: true
+        line: Acquire::AllowReleaseInfoChange::Suite "true";
+        mode: "0755"
+      when: ansible_pkg_mgr == "apt"
+
+    - name: Prepare on Debian Family
+      ansible.builtin.apt:
+        name: sudo
+        update_cache: true
+      when: ansible_pkg_mgr == "apt"

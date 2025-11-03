@@ -1,0 +1,32 @@
+---
+# vars file for roles/vector
+
+vector_yaml_path: /etc/vector/vector.yaml
+
+clickhouse_host: localhost
+
+vector_config:
+  sources:
+    file_one:
+      type: file
+      read_from: beginning
+      ignore_older_secs: 600
+      include:
+        - /tmp/vector.log
+        - /var/log/nginx/*
+
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - file_one
+      endpoint: http://{{ hostvars['clickhouse-01'].ansible_fqdn | default(clickhouse_host) }}:8123
+      auth:
+        password: "{{ clickhouse.password }}"
+        user: "{{ clickhouse.user }}"
+        strategy: basic
+      database: "{{ clickhouse.database }}"
+      table: "{{ clickhouse.table }}"
+      compression: gzip
+      healthcheck: true
+      skip_unknown_fields: false

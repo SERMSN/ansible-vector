@@ -1,0 +1,15 @@
+- name: VECTOR | Restarted service for systemd
+  become: true
+  ansible.builtin.systemd:
+    name: vector
+    state: started
+    daemon_reload: true
+  when: ansible_service_mgr == "systemd" and ansible_facts.virtualization_type != "docker" and ansible_facts.virtualization_type != "podman"
+
+- name: VECTOR | Restarted service for sysvinit
+  become: true
+  ansible.builtin.service:
+    name: vector
+    enabled: true
+    state: reloaded
+  when: ansible_service_mgr == "sysvinit" and ansible_facts.virtualization_type != "docker" and ansible_facts.virtualization_type != "podman"
