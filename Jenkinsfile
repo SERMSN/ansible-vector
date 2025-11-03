@@ -11,7 +11,7 @@ pipeline {
         stage('Sync Git') {
             steps {
                 dir('ansible-vector') {
-                    git branch: 'main', url: 'https://github.com/InfernoFeniks/ansible-vector.git'
+                    git branch: 'main', url: 'https://github.com/SERMSN/ansible-vector.git'
                 }
             }
         }
