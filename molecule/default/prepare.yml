@@ -1,0 +1,17 @@
+---
+- name: Bootstrap system with Python
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Install Python3
+      raw: |
+        if command -v apt-get > /dev/null; then
+          apt-get update && apt-get install -y python3 sudo
+        elif command -v yum > /dev/null; then
+          yum install -y python3 sudo
+        elif command -v dnf > /dev/null; then
+          dnf install -y python3 sudo
+        fi
+      args:
+        warn: false

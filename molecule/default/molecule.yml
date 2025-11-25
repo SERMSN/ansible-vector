@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+  enabled: true
+driver:
+  name: docker
+lint: |
+  yamllint .
+  ansible-lint
+  flake8
+platforms:
+   - name: ubuntu
+     image: ubuntu:25.10
+     pre_build_image: true
+   - name: debian
+     image: debian:13
+     pre_build_image: true
+   - name: fedora
+     image: fedora:43
+     pre_build_image: true
+provisioner:
+  name: ansible
+  playbooks:
+    prepare: prepare.yml
+verifier:
+  name: ansible

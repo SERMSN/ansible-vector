@@ -1,0 +1,29 @@
+galaxy_info:
+  role_name: vector
+  namespace: wrcs
+  author: Malyavko Sergei
+  company: WRCS
+  description: Role for installation and managing Vector
+
+  license: MIT
+
+  min_ansible_version: "2.14"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - bionic
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+    - name: Fedora
+      versions:
+        - "43"
+  galaxy_tags:
+    - logs
+    - monitoring
+    - exporter
+
+dependencies: []

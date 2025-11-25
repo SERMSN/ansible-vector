@@ -1,0 +1,83 @@
+---
+- name: Verify
+  hosts: all
+  vars:
+    vector_config_path: /etc/vector/vector.yaml
+  tasks:
+    - name: Check if Vector binary exists
+      ansible.builtin.stat:
+        path: /usr/bin/vector
+      register: vector_binary
+
+    - name: Check if Vector binary exists in /usr/local/bin
+      ansible.builtin.stat:
+        path: /usr/local/bin/vector
+      register: vector_binary_local
+
+    - name: Show Vector binary status
+      ansible.builtin.debug:
+        msg: |
+          Vector in /usr/bin: {{ vector_binary.stat.exists }}
+          Vector in /usr/local/bin: {{ vector_binary_local.stat.exists }}
+
+    - name: Find Vector files anywhere
+      ansible.builtin.find:
+        paths: 
+          - /usr
+          - /opt
+          - /home
+          - /var
+        patterns: "vector"
+        file_type: file
+        use_regex: no
+      register: all_vector_files
+
+    - name: Show all found Vector files
+      ansible.builtin.debug:
+        var: all_vector_files.files
+
+    - name: Check Vector config file
+      ansible.builtin.stat:
+        path: "{{ vector_config_path }}"
+      register: vector_config
+
+    - name: Show Vector config status
+      ansible.builtin.debug:
+        msg: "Vector config exists: {{ vector_config.stat.exists }}"
+
+    - name: Try to run Vector if binary found
+      block:
+        - name: Get Vector version
+          ansible.builtin.command:
+            cmd: "/usr/bin/vector --version"
+          register: vector_version
+          ignore_errors: yes
+
+        - name: Show Vector version from /usr/bin
+          ansible.builtin.debug:
+            msg: "Vector version: {{ vector_version.stdout }}"
+          when: vector_version.rc == 0
+      when: vector_binary.stat.exists
+
+    - name: Try to run Vector from /usr/local/bin if found
+      block:
+        - name: Get Vector version from /usr/local/bin
+          ansible.builtin.command:
+            cmd: "/usr/local/bin/vector --version"
+          register: vector_version_local
+          ignore_errors: yes
+
+        - name: Show Vector version from /usr/local/bin
+          ansible.builtin.debug:
+            msg: "Vector version: {{ vector_version_local.stdout }}"
+          when: vector_version_local.rc == 0
+      when: vector_binary_local.stat.exists
+
+    - name: Final summary
+      ansible.builtin.debug:
+        msg: |
+          Vector installation status:
+          - Binary in /usr/bin: {{ vector_binary.stat.exists }}
+          - Binary in /usr/local/bin: {{ vector_binary_local.stat.exists }}
+          - Config file: {{ vector_config.stat.exists }}
+          - Total Vector files found: {{ all_vector_files.files | length }}

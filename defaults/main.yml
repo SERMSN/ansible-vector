@@ -1,0 +1,10 @@
+---
+# defaults file for roles/vector
+
+clickhouse:
+  user: logger
+  password: logger
+  database: logs
+  table: file
+
+vector_version: "0.31.0"
