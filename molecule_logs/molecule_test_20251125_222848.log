@@ -290,7 +290,6 @@ PLAY RECAP *********************************************************************
 [36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [32mExecuted: Successful[0m
 [36mINFO    [0m [32mdefault[0m ➜ [33mscenario[0m: Pruning extra files from scenario ephemeral directory
 [35mWARNING [0m Molecule executed 1 scenario ([35m1 missing files[0m)
-
 =========================================
 Molecule tests finished at Вт 25 ноя 2025 22:32:53 +07
 Exit code: 0
