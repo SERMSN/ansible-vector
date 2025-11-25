@@ -1,295 +1,295 @@
 Starting Molecule tests at Вт 25 ноя 2025 22:28:48 +07
 Log file: molecule_logs/molecule_test_20251125_222848.log
 =========================================
-[35mWARNING [0m Driver docker does not provide a schema.
-[35mWARNING [0m Driver docker does not provide a schema.
-[36mINFO    [0m [32mdefault[0m ➜ [33mdiscovery[0m: scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
-[36mINFO    [0m [32mdefault[0m ➜ [33mprerun[0m: Performing prerun with role_name_check=0...
-[36mINFO    [0m [32mdefault[0m ➜ [33mdependency[0m: [36mExecuting[0m
-[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: Missing roles requirements file: requirements.yml
-[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: Missing collections requirements file: collections.yml
-[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: [35mExecuted: 2 missing[0m [2m(Remove from test_sequence to suppress)[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mcleanup[0m: [36mExecuting[0m
-[35mWARNING [0m [32mdefault[0m ➜ [33mcleanup[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [36mExecuting[0m
-[36mINFO    [0m Sanity checks: 'docker'
+[35mWARNING [0m Driver docker does not provide a schema.
+[35mWARNING [0m Driver docker does not provide a schema.
+[36mINFO    [0m [32mdefault[0m ➜ [33mdiscovery[0m: scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+[36mINFO    [0m [32mdefault[0m ➜ [33mprerun[0m: Performing prerun with role_name_check=0...
+[36mINFO    [0m [32mdefault[0m ➜ [33mdependency[0m: [36mExecuting[0m
+[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: Missing roles requirements file: requirements.yml
+[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: Missing collections requirements file: collections.yml
+[35mWARNING [0m [32mdefault[0m ➜ [33mdependency[0m: [35mExecuted: 2 missing[0m [2m(Remove from test_sequence to suppress)[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mcleanup[0m: [36mExecuting[0m
+[35mWARNING [0m [32mdefault[0m ➜ [33mcleanup[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [36mExecuting[0m
+[36mINFO    [0m Sanity checks: 'docker'
 
 PLAY [Destroy] *****************************************************************
 
 TASK [Set async_dir for HOME env] **********************************************
-[32mok: [localhost][0m
+[32mok: [localhost][0m
 
 TASK [Destroy molecule instance(s)] ********************************************
-[33mchanged: [localhost] => (item=ubuntu)[0m
-[33mchanged: [localhost] => (item=debian)[0m
-[33mchanged: [localhost] => (item=fedora)[0m
+[33mchanged: [localhost] => (item=ubuntu)[0m
+[33mchanged: [localhost] => (item=debian)[0m
+[33mchanged: [localhost] => (item=fedora)[0m
 
 TASK [Wait for instance(s) deletion to complete] *******************************
-[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
-[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
-[32mok: [localhost] => (item=ubuntu)[0m
-[32mok: [localhost] => (item=debian)[0m
-[32mok: [localhost] => (item=fedora)[0m
+[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
+[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
+[32mok: [localhost] => (item=ubuntu)[0m
+[32mok: [localhost] => (item=debian)[0m
+[32mok: [localhost] => (item=fedora)[0m
 
 TASK [Delete docker networks(s)] ***********************************************
-[36mskipping: [localhost][0m
+[36mskipping: [localhost][0m
 
 PLAY RECAP *********************************************************************
-[33mlocalhost[0m                  : [32mok=3   [0m [33mchanged=1   [0m unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
+[33mlocalhost[0m                  : [32mok=3   [0m [33mchanged=1   [0m unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33msyntax[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33msyntax[0m: [36mExecuting[0m
 
 playbook: /home/msn/Документы/Netology/Task/08-ansible-05-testing/ansible-vector/molecule/default/converge.yml
-[36mINFO    [0m [32mdefault[0m ➜ [33msyntax[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mcreate[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33msyntax[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mcreate[0m: [36mExecuting[0m
 
 PLAY [Create] ******************************************************************
 
 TASK [Set async_dir for HOME env] **********************************************
-[32mok: [localhost][0m
+[32mok: [localhost][0m
 
 TASK [Log into a Docker registry] **********************************************
-[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
-[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
-[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
-[36mskipping: [localhost][0m
+[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
+[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
+[36mskipping: [localhost] => (item=(censored due to no_log)) [0m
+[36mskipping: [localhost][0m
 
 TASK [Check presence of custom Dockerfiles] ************************************
-[32mok: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True})[0m
-[32mok: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True})[0m
-[32mok: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True})[0m
 
 TASK [Create Dockerfiles from image names] *************************************
-[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
-[35m[DEPRECATION WARNING]: Importing 'to_text' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.[0m
-[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
-[36mskipping: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}) [0m
-[36mskipping: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}) [0m
-[36mskipping: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}) [0m
-[36mskipping: [localhost][0m
+[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
+[35m[DEPRECATION WARNING]: Importing 'to_text' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.[0m
+[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
+[36mskipping: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}) [0m
+[36mskipping: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}) [0m
+[36mskipping: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}) [0m
+[36mskipping: [localhost][0m
 
 TASK [Synchronization the context] *********************************************
-[36mskipping: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}) [0m
-[36mskipping: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}) [0m
-[36mskipping: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}) [0m
-[36mskipping: [localhost][0m
+[36mskipping: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}) [0m
+[36mskipping: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}) [0m
+[36mskipping: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}) [0m
+[36mskipping: [localhost][0m
 
 TASK [Discover local Docker images] ********************************************
-[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 0, 'ansible_index_var': 'i'})[0m
-[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 1, 'ansible_index_var': 'i'})[0m
-[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 2, 'ansible_index_var': 'i'})[0m
+[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 0, 'ansible_index_var': 'i'})[0m
+[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 1, 'ansible_index_var': 'i'})[0m
+[32mok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 2, 'ansible_index_var': 'i'})[0m
 
 TASK [Build an Ansible compatible image (new)] *********************************
-[36mskipping: [localhost] => (item=molecule_local/ubuntu:25.10) [0m
-[36mskipping: [localhost] => (item=molecule_local/debian:13) [0m
-[36mskipping: [localhost] => (item=molecule_local/fedora:43) [0m
-[36mskipping: [localhost][0m
+[36mskipping: [localhost] => (item=molecule_local/ubuntu:25.10) [0m
+[36mskipping: [localhost] => (item=molecule_local/debian:13) [0m
+[36mskipping: [localhost] => (item=molecule_local/fedora:43) [0m
+[36mskipping: [localhost][0m
 
 TASK [Create docker network(s)] ************************************************
-[36mskipping: [localhost][0m
+[36mskipping: [localhost][0m
 
 TASK [Determine the CMD directives] ********************************************
-[32mok: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True})[0m
-[32mok: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True})[0m
-[32mok: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'debian:13', 'name': 'debian', 'pre_build_image': True})[0m
+[32mok: [localhost] => (item={'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True})[0m
 
 TASK [Create molecule instance(s)] *********************************************
-[33mchanged: [localhost] => (item=ubuntu)[0m
-[33mchanged: [localhost] => (item=debian)[0m
-[33mchanged: [localhost] => (item=fedora)[0m
+[33mchanged: [localhost] => (item=ubuntu)[0m
+[33mchanged: [localhost] => (item=debian)[0m
+[33mchanged: [localhost] => (item=fedora)[0m
 
 TASK [Wait for instance(s) creation to complete] *******************************
-[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j157215525987.110883', 'results_file': '/home/msn/.ansible_async/j157215525987.110883', 'changed': True, 'item': {'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
-[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j7950001108.110900', 'results_file': '/home/msn/.ansible_async/j7950001108.110900', 'changed': True, 'item': {'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
-[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j950175027036.110918', 'results_file': '/home/msn/.ansible_async/j950175027036.110918', 'changed': True, 'item': {'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
+[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j157215525987.110883', 'results_file': '/home/msn/.ansible_async/j157215525987.110883', 'changed': True, 'item': {'image': 'ubuntu:25.10', 'name': 'ubuntu', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
+[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j7950001108.110900', 'results_file': '/home/msn/.ansible_async/j7950001108.110900', 'changed': True, 'item': {'image': 'debian:13', 'name': 'debian', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
+[33mchanged: [localhost] => (item={'failed': False, 'started': True, 'finished': False, 'ansible_job_id': 'j950175027036.110918', 'results_file': '/home/msn/.ansible_async/j950175027036.110918', 'changed': True, 'item': {'image': 'fedora:43', 'name': 'fedora', 'pre_build_image': True}, 'ansible_loop_var': 'item'})[0m
 
 PLAY RECAP *********************************************************************
-[33mlocalhost[0m                  : [32mok=6   [0m [33mchanged=2   [0m unreachable=0    failed=0    [36mskipped=5   [0m rescued=0    ignored=0
+[33mlocalhost[0m                  : [32mok=6   [0m [33mchanged=2   [0m unreachable=0    failed=0    [36mskipped=5   [0m rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mcreate[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mprepare[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mcreate[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mprepare[0m: [36mExecuting[0m
 
 PLAY [Bootstrap system with Python] ********************************************
 
 TASK [Install Python3] *********************************************************
-[33mchanged: [debian][0m
-[33mchanged: [ubuntu][0m
-[33mchanged: [fedora][0m
+[33mchanged: [debian][0m
+[33mchanged: [ubuntu][0m
+[33mchanged: [fedora][0m
 
 PLAY RECAP *********************************************************************
-[33mdebian[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[33mfedora[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[33mubuntu[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[33mdebian[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[33mfedora[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[33mubuntu[0m                     : [32mok=1   [0m [33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mprepare[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mconverge[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mprepare[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mconverge[0m: [36mExecuting[0m
 
 PLAY [Converge] ****************************************************************
 
 TASK [Gathering Facts] *********************************************************
-[32mok: [ubuntu][0m
-[32mok: [fedora][0m
-[32mok: [debian][0m
+[32mok: [ubuntu][0m
+[32mok: [fedora][0m
+[32mok: [debian][0m
 
 TASK [Include role vector] *****************************************************
-[36mincluded: ../../ for debian, fedora, ubuntu[0m
+[36mincluded: ../../ for debian, fedora, ubuntu[0m
 
 PLAY RECAP *********************************************************************
-[32mdebian[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[32mfedora[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[32mubuntu[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mdebian[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mfedora[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mubuntu[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mconverge[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33midempotence[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mconverge[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33midempotence[0m: [36mExecuting[0m
 
 PLAY [Converge] ****************************************************************
 
 TASK [Gathering Facts] *********************************************************
-[32mok: [debian][0m
-[32mok: [fedora][0m
-[32mok: [ubuntu][0m
+[32mok: [debian][0m
+[32mok: [fedora][0m
+[32mok: [ubuntu][0m
 
 TASK [Include role vector] *****************************************************
-[36mincluded: ../../ for debian, fedora, ubuntu[0m
+[36mincluded: ../../ for debian, fedora, ubuntu[0m
 
 PLAY RECAP *********************************************************************
-[32mdebian[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[32mfedora[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-[32mubuntu[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mdebian[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mfedora[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+[32mubuntu[0m                     : [32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33midempotence[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mside_effect[0m: [36mExecuting[0m
-[35mWARNING [0m [32mdefault[0m ➜ [33mside_effect[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mverify[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33midempotence[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mside_effect[0m: [36mExecuting[0m
+[35mWARNING [0m [32mdefault[0m ➜ [33mside_effect[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mverify[0m: [36mExecuting[0m
 
 PLAY [Verify] ******************************************************************
 
 TASK [Gathering Facts] *********************************************************
-[32mok: [debian][0m
-[32mok: [fedora][0m
-[32mok: [ubuntu][0m
+[32mok: [debian][0m
+[32mok: [fedora][0m
+[32mok: [ubuntu][0m
 
 TASK [Check if Vector binary exists] *******************************************
-[32mok: [debian][0m
-[32mok: [fedora][0m
-[32mok: [ubuntu][0m
+[32mok: [debian][0m
+[32mok: [fedora][0m
+[32mok: [ubuntu][0m
 
 TASK [Check if Vector binary exists in /usr/local/bin] *************************
-[32mok: [ubuntu][0m
-[32mok: [debian][0m
-[32mok: [fedora][0m
+[32mok: [ubuntu][0m
+[32mok: [debian][0m
+[32mok: [fedora][0m
 
 TASK [Show Vector binary status] ***********************************************
-[32mok: [debian] => {[0m
-[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
-[32m}[0m
-[32mok: [fedora] => {[0m
-[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
-[32m}[0m
-[32mok: [ubuntu] => {[0m
-[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
-[32m}[0m
+[32mok: [debian] => {[0m
+[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
+[32m}[0m
+[32mok: [fedora] => {[0m
+[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
+[32m}[0m
+[32mok: [ubuntu] => {[0m
+[32m    "msg": "Vector in /usr/bin: False\nVector in /usr/local/bin: False\n"[0m
+[32m}[0m
 
 TASK [Find Vector files anywhere] **********************************************
-[32mok: [ubuntu][0m
-[32mok: [fedora][0m
-[32mok: [debian][0m
+[32mok: [ubuntu][0m
+[32mok: [fedora][0m
+[32mok: [debian][0m
 
 TASK [Show all found Vector files] *********************************************
-[32mok: [debian] => {[0m
-[32m    "all_vector_files.files": [][0m
-[32m}[0m
-[32mok: [fedora] => {[0m
-[32m    "all_vector_files.files": [][0m
-[32m}[0m
-[32mok: [ubuntu] => {[0m
-[32m    "all_vector_files.files": [][0m
-[32m}[0m
+[32mok: [debian] => {[0m
+[32m    "all_vector_files.files": [][0m
+[32m}[0m
+[32mok: [fedora] => {[0m
+[32m    "all_vector_files.files": [][0m
+[32m}[0m
+[32mok: [ubuntu] => {[0m
+[32m    "all_vector_files.files": [][0m
+[32m}[0m
 
 TASK [Check Vector config file] ************************************************
-[32mok: [fedora][0m
-[32mok: [debian][0m
-[32mok: [ubuntu][0m
+[32mok: [fedora][0m
+[32mok: [debian][0m
+[32mok: [ubuntu][0m
 
 TASK [Show Vector config status] ***********************************************
-[32mok: [debian] => {[0m
-[32m    "msg": "Vector config exists: False"[0m
-[32m}[0m
-[32mok: [fedora] => {[0m
-[32m    "msg": "Vector config exists: False"[0m
-[32m}[0m
-[32mok: [ubuntu] => {[0m
-[32m    "msg": "Vector config exists: False"[0m
-[32m}[0m
+[32mok: [debian] => {[0m
+[32m    "msg": "Vector config exists: False"[0m
+[32m}[0m
+[32mok: [fedora] => {[0m
+[32m    "msg": "Vector config exists: False"[0m
+[32m}[0m
+[32mok: [ubuntu] => {[0m
+[32m    "msg": "Vector config exists: False"[0m
+[32m}[0m
 
 TASK [Get Vector version] ******************************************************
-[36mskipping: [debian][0m
-[36mskipping: [fedora][0m
-[36mskipping: [ubuntu][0m
+[36mskipping: [debian][0m
+[36mskipping: [fedora][0m
+[36mskipping: [ubuntu][0m
 
 TASK [Show Vector version from /usr/bin] ***************************************
-[36mskipping: [debian][0m
-[36mskipping: [fedora][0m
-[36mskipping: [ubuntu][0m
+[36mskipping: [debian][0m
+[36mskipping: [fedora][0m
+[36mskipping: [ubuntu][0m
 
 TASK [Get Vector version from /usr/local/bin] **********************************
-[36mskipping: [debian][0m
-[36mskipping: [fedora][0m
-[36mskipping: [ubuntu][0m
+[36mskipping: [debian][0m
+[36mskipping: [fedora][0m
+[36mskipping: [ubuntu][0m
 
 TASK [Show Vector version from /usr/local/bin] *********************************
-[36mskipping: [debian][0m
-[36mskipping: [fedora][0m
-[36mskipping: [ubuntu][0m
+[36mskipping: [debian][0m
+[36mskipping: [fedora][0m
+[36mskipping: [ubuntu][0m
 
 TASK [Final summary] ***********************************************************
-[32mok: [debian] => {[0m
-[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
-[32m}[0m
-[32mok: [fedora] => {[0m
-[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
-[32m}[0m
-[32mok: [ubuntu] => {[0m
-[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
-[32m}[0m
+[32mok: [debian] => {[0m
+[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
+[32m}[0m
+[32mok: [fedora] => {[0m
+[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
+[32m}[0m
+[32mok: [ubuntu] => {[0m
+[32m    "msg": "Vector installation status:\n- Binary in /usr/bin: False\n- Binary in /usr/local/bin: False\n- Config file: False\n- Total Vector files found: 0\n"[0m
+[32m}[0m
 
 PLAY RECAP *********************************************************************
-[32mdebian[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
-[32mfedora[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
-[32mubuntu[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
+[32mdebian[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
+[32mfedora[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
+[32mubuntu[0m                     : [32mok=9   [0m changed=0    unreachable=0    failed=0    [36mskipped=4   [0m rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mverify[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mcleanup[0m: [36mExecuting[0m
-[35mWARNING [0m [32mdefault[0m ➜ [33mcleanup[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [36mExecuting[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mverify[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mcleanup[0m: [36mExecuting[0m
+[35mWARNING [0m [32mdefault[0m ➜ [33mcleanup[0m: [35mExecuted: Missing playbook[0m [2m(Remove from test_sequence to suppress)[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [36mExecuting[0m
 
 PLAY [Destroy] *****************************************************************
 
 TASK [Set async_dir for HOME env] **********************************************
-[32mok: [localhost][0m
+[32mok: [localhost][0m
 
 TASK [Destroy molecule instance(s)] ********************************************
-[33mchanged: [localhost] => (item=ubuntu)[0m
-[33mchanged: [localhost] => (item=debian)[0m
-[33mchanged: [localhost] => (item=fedora)[0m
+[33mchanged: [localhost] => (item=ubuntu)[0m
+[33mchanged: [localhost] => (item=debian)[0m
+[33mchanged: [localhost] => (item=fedora)[0m
 
 TASK [Wait for instance(s) deletion to complete] *******************************
-[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
-[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
-[33mchanged: [localhost] => (item=ubuntu)[0m
-[33mchanged: [localhost] => (item=debian)[0m
-[33mchanged: [localhost] => (item=fedora)[0m
+[1;35m[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.[0m
+[35m[DEPRECATION WARNING]: The `ansible.module_utils.common._collections_compat` module is deprecated. This feature will be removed from ansible-core version 2.24. Use `collections.abc` from the Python standard library instead.[0m
+[33mchanged: [localhost] => (item=ubuntu)[0m
+[33mchanged: [localhost] => (item=debian)[0m
+[33mchanged: [localhost] => (item=fedora)[0m
 
 TASK [Delete docker networks(s)] ***********************************************
-[36mskipping: [localhost][0m
+[36mskipping: [localhost][0m
 
 PLAY RECAP *********************************************************************
-[33mlocalhost[0m                  : [32mok=3   [0m [33mchanged=2   [0m unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
+[33mlocalhost[0m                  : [32mok=3   [0m [33mchanged=2   [0m unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
 
-[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [32mExecuted: Successful[0m
-[36mINFO    [0m [32mdefault[0m ➜ [33mscenario[0m: Pruning extra files from scenario ephemeral directory
-[35mWARNING [0m Molecule executed 1 scenario ([35m1 missing files[0m)
+[36mINFO    [0m [32mdefault[0m ➜ [33mdestroy[0m: [32mExecuted: Successful[0m
+[36mINFO    [0m [32mdefault[0m ➜ [33mscenario[0m: Pruning extra files from scenario ephemeral directory
+[35mWARNING [0m Molecule executed 1 scenario ([35m1 missing files[0m)
 =========================================
 Molecule tests finished at Вт 25 ноя 2025 22:32:53 +07
 Exit code: 0
