@@ -1,0 +1,10 @@
+---
+- name: Minimal Molecule Test
+  hosts: all
+  tasks:
+    - name: Test Ansible connection
+      ansible.builtin.ping:
+
+    - name: Print success message
+      ansible.builtin.debug:
+        msg: "✅ Molecule with Podman is working correctly!"

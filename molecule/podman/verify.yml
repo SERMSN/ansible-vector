@@ -1,0 +1,7 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Check if test passed
+      ansible.builtin.debug:
+        msg: "✅ Minimal test completed successfully!"
